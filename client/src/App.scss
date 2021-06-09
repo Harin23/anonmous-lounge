@@ -1,0 +1,55 @@
+@import "~bootstrap/scss/bootstrap";
+
+// Chat component
+$activeUsersHeight: 100vh;
+$sendMessageDisplayHeight: 30vh;
+$chatDisplayHeight: 100vh - $sendMessageDisplayHeight;
+#active-users{
+  display: flex;
+  flex-direction: column;
+  height: $activeUsersHeight;
+}
+#chat-display{
+  display: flex;
+  flex-direction: column;
+  height: $chatDisplayHeight;
+}
+#send-message{
+  height: $sendMessageDisplayHeight;
+}
+
+//loader
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
