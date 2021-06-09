@@ -1,5 +1,5 @@
 import {SET_USERNAME_REQUEST, SET_USERNAME_SUCCESS, SET_USERNAME_FAILURE} from '../types';
-import registerNewuser from '../../controller/socketController';
+import {registerNewuser} from '../../controller/socketController';
 
 export const setUsername = (username) => {
   return (dispatch) => {

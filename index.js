@@ -26,8 +26,8 @@ io.on("connection", (socket) => {
     // console.log(data)
     socket.join('chat')
     users[socket.id] = data;
-    socket.emit('new-user-registered', 'true')
-    io.emit(users)
+    // socket.emit('new-user-registered', 'true')
+    io.emit('new-user-registered', 'true')
     console.log(users)
     // var clients = io.engine.clientsCount
     // console.log(clients)
@@ -43,6 +43,10 @@ io.on("connection", (socket) => {
     // console.log(users)
   });
 
+});
+
+app.get('/users', (req, res)=>{
+  res.json(Object.values(users));
 });
 
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));

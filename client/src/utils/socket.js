@@ -1,3 +1,4 @@
 import socketIOClient from "socket.io-client";
-const socket = socketIOClient("http://127.0.0.1:4001");
+import {HOSTNAME} from './host'; 
+const socket = socketIOClient(HOSTNAME);
 export default socket;
