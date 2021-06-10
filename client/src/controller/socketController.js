@@ -14,3 +14,7 @@ export function listenForUsers(fetchUsers){
         fetchUsers();
     })
 }
+
+export function sendMessageSocket(message){
+    socket.emit('sendMessage', message)
+}

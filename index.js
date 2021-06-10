@@ -34,7 +34,8 @@ io.on("connection", (socket) => {
   })
 
   socket.on("sendMessage", (data) =>{
-    io.emit('message', `${users[socket.id]}:${data.message}`);
+    console.log(data)
+    io.emit('message', `${users[socket.id]}:${data}`);
   });
 
   socket.on("disconnect", () => {
