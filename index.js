@@ -27,7 +27,7 @@ io.on("connection", (socket) => {
     socket.join('chat')
     users[socket.id] = data;
     // socket.emit('new-user-registered', 'true')
-    io.emit('update-users')
+    io.emit('update-users', Object.values(users))
     console.log(users)
     // var clients = io.engine.clientsCount
     // console.log(clients)
@@ -41,14 +41,10 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log(users[socket.id], " disconnected");
     delete users[socket.id];
-    io.emit('update-users')
+    io.emit('update-users', Object.values(users))
     // console.log(users)
   });
 
-});
-
-app.get('/users', (req, res)=>{
-  res.json(Object.values(users));
 });
 
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));

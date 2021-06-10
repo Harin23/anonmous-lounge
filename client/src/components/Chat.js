@@ -1,17 +1,13 @@
 import { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { setUsername } from '../redux';
 import Input from './Input';
-import Loading from './Loading';
 import Users from './Users';
+import {registerNewuser} from '../controller/socketController';
 
-const Chat = ({username, setUsername}) => {
+const Chat = () => {
     useEffect(()=>{
-        setUsername(localStorage.getItem('username'));
-    }, [setUsername])
-    return  username.loading ? (
-        <Loading/>
-    ) : ( 
+        registerNewuser(localStorage.getItem('username'));
+    }, [])
+    return ( 
         <div className="container-fluid">
             <div className="row">
                 <div className="col-4 bg-info" id='active-users'><Users/></div>
@@ -23,20 +19,5 @@ const Chat = ({username, setUsername}) => {
         </div>
     );
 }
- 
-const mapStateToProps = state =>{
-    return {
-        username: state.username,
-    }
-}
- 
-const mapDispatchToProps = dispatch =>{
-    return {
-        setUsername: (name) => dispatch(setUsername(name))
-    }
-}
- 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Chat);
+
+export default Chat;

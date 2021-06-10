@@ -1,17 +1,13 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchUsers } from '../redux';
+import { getUsersSuccess } from '../redux';
 import Loading from './Loading';
 import {listenForUsers} from '../controller/socketController';
 
-const Users = ({users, fetchUsers})=>{
+const Users = ({users, getUsers})=>{
     useEffect(()=>{
-        if(users.loaded){
-            fetchUsers();
-        }else{
-            listenForUsers(fetchUsers);
-        }
-    }, [fetchUsers, users.loaded])
+        listenForUsers(getUsers);
+    }, [getUsers])
     return users.loading ? (
         <Loading/>
     ) : ( 
@@ -33,7 +29,7 @@ const mapStateToProps = state =>{
  
 const mapDispatchToProps = dispatch =>{
     return {
-        fetchUsers: (name) => dispatch(fetchUsers(name))
+        getUsers: (users) => dispatch(getUsersSuccess(users))
     }
 }
  
