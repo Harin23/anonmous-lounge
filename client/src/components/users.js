@@ -2,11 +2,16 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchUsers } from '../redux';
 import Loading from './Loading';
+import {listenForUsers} from '../controller/socketController';
 
 const Users = ({users, fetchUsers})=>{
     useEffect(()=>{
-        fetchUsers();
-    }, [users.refresh, fetchUsers])
+        if(users.loaded){
+            fetchUsers();
+        }else{
+            listenForUsers(fetchUsers);
+        }
+    }, [fetchUsers, users.loaded])
     return users.loading ? (
         <Loading/>
     ) : ( 

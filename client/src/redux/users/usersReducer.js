@@ -7,7 +7,8 @@ import {
 const initialState={
     loading: false,
     users: [],
-    error: ''
+    error: '',
+    loaded: false
 };
 
 const usersReducer = (state = initialState, action)=>{

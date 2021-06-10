@@ -27,7 +27,7 @@ io.on("connection", (socket) => {
     socket.join('chat')
     users[socket.id] = data;
     // socket.emit('new-user-registered', 'true')
-    io.emit('new-user-registered', 'true')
+    io.emit('update-users')
     console.log(users)
     // var clients = io.engine.clientsCount
     // console.log(clients)
@@ -40,6 +40,7 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log(users[socket.id], " disconnected");
     delete users[socket.id];
+    io.emit('update-users')
     // console.log(users)
   });
 
