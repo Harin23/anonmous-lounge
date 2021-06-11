@@ -8,13 +8,10 @@ const Messages = ({messages, getMessage}) => {
         listenForMessages(getMessage);
     }, [getMessage])
     return ( 
-        <div className="container-fluid recieve-message">
-            {console.log(messages)}
-            <div className="container-fluid h-100 bg-secondary mt-2 overflow-auto text" id="displayMessages">
-                {messages.messages.map((message, i)=>{
-                    return <span className="d-block, rounded-pill, p-1, my-1, bg-info, text-dark" key={i}>{message}</span>
-                })}
-            </div>
+        <div className="container-fluid h-100 w-100 bg-secondary overflow-auto text" id="displayMessages">
+            {messages.messages.map((message, i)=>{
+                return <span className="d-block rounded-pill p-1 my-1 bg-info text-dark" key={i}>{message}</span>
+            })}
         </div>
     );
 }

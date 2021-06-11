@@ -1,24 +1,34 @@
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Input from './Input';
 import Users from './Users';
 import {registerNewuser} from '../controller/socketController';
 import Messages from './Messages';
+import { Redirect } from "react-router-dom";
 
 const Chat = () => {
+    const [redirect, setRedirect] = useState(false);
     useEffect(()=>{
-        registerNewuser(localStorage.getItem('username'));
+        if(!!localStorage.getItem('username')){
+            registerNewuser(localStorage.getItem('username'));
+        }else{
+            setRedirect(true);
+        }
     }, [])
-    return ( 
-        <div className="container-fluid">
-            <div className="row">
-                <div className="col-4 bg-info" id='active-users'><Users/></div>
-                <div className="col">
-                    <div className="row bg-danger" id='chat-display'><Messages /></div>
-                    <div className="row bg-warning" id='send-message'><Input /></div>
+    if(redirect){
+        return(<Redirect to='/' />)
+    }else{
+        return ( 
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-4 bg-info" id='active-users'><Users/></div>
+                    <div className="col">
+                        <div className="row" id='chat-display'><Messages /></div>
+                        <div className="row bg-warning" id='send-message'><Input /></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default Chat;

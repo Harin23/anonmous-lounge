@@ -23,19 +23,20 @@ io.on("connection", (socket) => {
   console.log("New client connected", socket.id, socket.username);
 
   socket.on("new-user", (data)=>{
-    // console.log(data)
-    socket.join('chat')
-    users[socket.id] = data;
-    // socket.emit('new-user-registered', 'true')
-    io.emit('update-users', Object.values(users))
+    if(data){
+      socket.join('chat')
+      users[socket.id] = data;
+      io.emit('update-users', Object.values(users))
+    }
     console.log(users)
-    // var clients = io.engine.clientsCount
-    // console.log(clients)
   })
 
   socket.on("sendMessage", (data) =>{
-    console.log(data)
-    io.emit('message', `${users[socket.id]}:${data}`);
+    if(!!users[socket.id]){
+      io.emit('message', `${users[socket.id]}:${data}`);
+    }else{
+      io.emit('message', `unknown:${data}`);
+    }
   });
 
   socket.on("disconnect", () => {
