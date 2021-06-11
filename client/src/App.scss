@@ -1,21 +1,22 @@
-@import "~bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 // Chat component
 $activeUsersHeight: 100vh;
 $sendMessageDisplayHeight: 30vh;
 $chatDisplayHeight: 100vh - $sendMessageDisplayHeight;
 #active-users{
-  display: flex;
-  flex-direction: column;
   height: $activeUsersHeight;
 }
 #chat-display{
-  display: flex;
-  flex-direction: column;
   height: $chatDisplayHeight;
 }
 #send-message{
   height: $sendMessageDisplayHeight;
+}
+#displayMessages{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 //loader
