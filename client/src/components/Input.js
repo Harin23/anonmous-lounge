@@ -8,7 +8,7 @@ const Input = () => {
     return ( 
         <div className="container-fluid h-100 w-100 overflow-auto px-0">
             <form onSubmit={sendMessage}>
-                <input className='h-100 w-100' type="text" />
+                <input className='h-100 w-100' type="text" maxlength="45" />
             </form>
         </div>
      );

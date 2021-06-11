@@ -16,7 +16,7 @@ const Home = () => {
                 <form onSubmit={setUsernameSumbit}>
                     <label htmlFor="">
                         Username: <input type="text"/>
-                        <button type="submit">Start</button>
+                        <button type="submit">Chat</button>
                     </label>
                 </form>
             </div>

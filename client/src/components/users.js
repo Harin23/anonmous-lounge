@@ -1,16 +1,13 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getUsersSuccess } from '../redux';
-import Loading from './Loading';
 import {listenForUsers} from '../controller/socketController';
 
 const Users = ({users, getUsers})=>{
     useEffect(()=>{
         listenForUsers(getUsers);
     }, [getUsers])
-    return users.loading ? (
-        <Loading/>
-    ) : ( 
+    return ( 
         <div className="users">
              <div className="card-header text-white">
                  <h5>Active Users:</h5>
