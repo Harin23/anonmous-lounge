@@ -12,9 +12,12 @@ const Users = ({users, getUsers})=>{
         <Loading/>
     ) : ( 
         <div className="users">
-            <ul className="list-group list-group-flush bg-light" id="users">
+             <div className="card-header text-white">
+                 <h5>Active Users:</h5>
+             </div>
+            <ul className="list-group list-group-flush" id="users">
                 {users.users.map((user, i)=>{
-                    return <li className="list-group-item bg-transparent" key={i}>{user}</li>
+                    return <li className="list-group-item rounded-pill" key={i}>{user}</li>
                 })}
             </ul>
         </div>

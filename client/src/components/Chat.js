@@ -20,10 +20,10 @@ const Chat = () => {
         return ( 
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-4 bg-info" id='active-users'><Users/></div>
+                    <div className="col-4 bg-dark" id='active-users'><Users/></div>
                     <div className="col">
-                        <div className="row" id='chat-display'><Messages /></div>
-                        <div className="row bg-warning" id='send-message'><Input /></div>
+                        <div className="row" id='chat-display'><Messages/></div>
+                        <div className="row bg-warning" id='send-message'><Input/></div>
                     </div>
                 </div>
             </div>

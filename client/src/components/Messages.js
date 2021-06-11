@@ -10,7 +10,7 @@ const Messages = ({messages, getMessage}) => {
     return ( 
         <div className="container-fluid h-100 w-100 bg-secondary overflow-auto text" id="displayMessages">
             {messages.messages.map((message, i)=>{
-                return <span className="d-block rounded-pill p-1 my-1 bg-info text-dark" key={i}>{message}</span>
+                return <span className="d-block rounded-pill p-1 my-1 bg-info text-dark" id='message' key={i}>{message}</span>
             })}
         </div>
     );

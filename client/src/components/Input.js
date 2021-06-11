@@ -6,10 +6,9 @@ const Input = () => {
         e.target[0].value=null;
     }
     return ( 
-        <div className="input">
+        <div className="container-fluid h-100 w-100 overflow-auto text">
             <form onSubmit={sendMessage}>
-                <input type="text" />
-                <button type="submit">Send</button>
+                <input className='h-100 w-100' type="text" />
             </form>
         </div>
      );
