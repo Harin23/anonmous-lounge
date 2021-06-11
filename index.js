@@ -28,7 +28,7 @@ io.on("connection", (socket) => {
       users[socket.id] = data;
       io.emit('update-users', Object.values(users))
     }
-    console.log(users)
+    // console.log(users)
   })
 
   socket.on("sendMessage", (data) =>{
@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    console.log(users[socket.id], " disconnected");
+    // console.log(users[socket.id], " disconnected");
     delete users[socket.id];
     io.emit('update-users', Object.values(users))
     // console.log(users)

@@ -17,7 +17,7 @@ const Users = ({users, getUsers})=>{
              </div>
             <ul className="list-group list-group-flush" id="users">
                 {users.users.map((user, i)=>{
-                    return <li className="list-group-item rounded-pill" key={i}>{user}</li>
+                    return <li className="list-group-item rounded-pill bg-info text-center" key={i}>{user}</li>
                 })}
             </ul>
         </div>
