@@ -22,8 +22,8 @@ const Chat = () => {
                 <div className="row">
                     <div className="col-4 bg-dark" id='active-users'><Users/></div>
                     <div className="col-8">
-                        <div className="row" id='chat-display'><Messages/></div>
-                        <div className="row bg-info" id='send-message'><Input/></div>
+                        <div className="row bg-secondary" id='chat-display'><Messages/></div>
+                        <div className="row bg-secondary" id='send-message'><Input/></div>
                     </div>
                 </div>
             </div>
