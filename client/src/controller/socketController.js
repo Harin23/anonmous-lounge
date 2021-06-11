@@ -14,8 +14,8 @@ export function sendMessageSocket(message){
     socket.emit('sendMessage', message)
 }
 
-export function listenForMessages(){
+export function listenForMessages(getMessage){
     socket.on('message', (message)=>{
-        
+        getMessage(message);
     })
 }
