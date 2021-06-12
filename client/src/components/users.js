@@ -10,11 +10,15 @@ const Users = ({users, getUsers})=>{
     return ( 
         <div className="users">
              <div className="card-header text-white">
-                 <h5>Active Users:</h5>
+                 <h3>Active Users: {users.users.length}</h3>
              </div>
             <ul className="list-group list-group-flush" id="users">
                 {users.users.map((user, i)=>{
-                    return <li className="list-group-item rounded-pill bg-info text-center" key={i}>{user}</li>
+                    return <li className="
+                    list-group-item 
+                    rounded-pill 
+                    bg-info 
+                    text-center" key={i}> <img src={user.pic} alt="Profile pic" /> {user.name}</li>
                 })}
             </ul>
         </div>

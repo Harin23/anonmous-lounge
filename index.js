@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended: true}));
 var users={};
 
 io.on("connection", (socket) => {
-  console.log("New client connected", socket.id, socket.username);
+  console.log("New client connected", socket.id);
 
   socket.on("new-user", (data)=>{
     if(data){
@@ -33,7 +33,7 @@ io.on("connection", (socket) => {
 
   socket.on("sendMessage", (data) =>{
     if(!!users[socket.id]){
-      io.emit('message', `${users[socket.id]}:${data}`);
+      io.emit('message', `${users[socket.id].name}: ${data}`);
     }else{
       io.emit('message', `unknown:${data}`);
     }

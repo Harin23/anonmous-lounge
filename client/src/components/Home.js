@@ -11,6 +11,9 @@ const Home = () => {
     }
     const responseGoogle = (response) => {
         console.log(response);
+        localStorage.setItem('username', response.profileObj.givenName);
+        localStorage.setItem('profilePic', response.profileObj.imageUrl);
+        setRedirect(true);
     }
     if(redirect){
         return(<Redirect to='/chat' />)
@@ -28,7 +31,7 @@ const Home = () => {
                     buttonText="Login"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle}
-                    cookiePolicy={'Strict'}
+                    cookiePolicy={'single_host_origin'}
                 />
             </div>
         );

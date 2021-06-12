@@ -1,7 +1,7 @@
 import socket from '../utils/socket';
 
-export function registerNewuser(name){
-    socket.emit('new-user', name);
+export function registerNewuser(data){
+    socket.emit('new-user', data);
 }
 
 export function listenForUsers(getUsers){
