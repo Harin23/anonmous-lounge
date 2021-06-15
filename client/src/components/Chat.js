@@ -8,10 +8,9 @@ import { Redirect } from "react-router-dom";
 const Chat = () => {
     const [redirect, setRedirect] = useState(false);
     useEffect(()=>{
-        if(!!localStorage.getItem('username') && !!localStorage.getItem('profilePic')){
+        if(!!localStorage.getItem('username')){
             registerNewuser({
                 name: localStorage.getItem('username'), 
-                pic: localStorage.getItem('profilePic')
             });
         }else{
             setRedirect(true);

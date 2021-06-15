@@ -18,7 +18,7 @@ const Users = ({users, getUsers})=>{
                     list-group-item 
                     rounded-pill 
                     bg-info 
-                    text-center" key={i}> <img src={user.pic} alt="Profile pic" /> {user.name}</li>
+                    text-center" key={i}> {user.name}</li>
                 })}
             </ul>
         </div>
