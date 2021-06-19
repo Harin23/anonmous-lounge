@@ -1,10 +1,10 @@
 import {
-    GET_USERS_SUCCESS
+    GET_USERS
 } from '../types';
 
-export const getUsersSuccess = users => {
+export const getUsers = users => {
   return {
-      type: GET_USERS_SUCCESS,
+      type: GET_USERS,
       payload: users
   }
 }

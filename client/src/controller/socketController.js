@@ -1,21 +1,25 @@
-import socket from '../utils/socket';
+// import socket from '../utils/socket';
 
-export function registerNewuser(data){
+export function registerNewuser(socket, data){
     socket.emit('new-user', data);
 }
 
-export function listenForUsers(getUsers){
+export function listenForUsers(socket, getUsers){
     socket.on('update-users', (users)=>{
         getUsers(users);
     })
 }
 
-export function sendMessageSocket(message){
+export function sendMessageSocket(socket, message){
     socket.emit('sendMessage', message)
 }
 
-export function listenForMessages(getMessage){
+export function listenForMessages(socket, getMessage){
     socket.on('message', (message)=>{
         getMessage(message);
     })
+
+    socket.on('connect_error', function() {
+        getMessage("Error: Not connected to server");
+    });
 }

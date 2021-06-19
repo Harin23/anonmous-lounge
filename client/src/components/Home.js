@@ -18,7 +18,7 @@ const Home = () => {
                 <h1>Welcome to the Lounge! Please enter your username to continue.</h1>
                 <form onSubmit={setUsernameSumbit}>
                     <label htmlFor="">
-                        Username: <input type="text"/>
+                        Username: <input type="text" required/>
                         <button className="btn btn-color text-white mx-2" type="submit">Chat</button>
                     </label>
                 </form>
