@@ -38,7 +38,7 @@ const Chat = ({users, getUsers, messages, getMessage}) => {
         return ( 
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-4 bg-dark" id='active-users'><Users users={users.users}/></div>
+                    <div className="col-4 bg-dark overflow-auto" id='active-users'><Users users={users.users}/></div>
                     <div className="col-8">
                         <div className="row bg-secondary" id='chat-display'><Messages messages={messages.messages}/></div>
                         <div className="row bg-secondary" id='send-message'><Input sendMessage={sendMessage}/></div>
