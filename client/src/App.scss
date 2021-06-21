@@ -1,11 +1,17 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Chat component
-$activeUsersHeight: 100vh;
+$sidebarHeight: 100vh;
 $sendMessageDisplayHeight: 3vh;
 $chatDisplayHeight: 100vh - $sendMessageDisplayHeight;
-#active-users{
-  height: $activeUsersHeight;
+#side-bar{
+  height: $sidebarHeight;
+}
+.users{
+max-height: 65%;
+}
+.soundcloud{
+  max-height: 35%;
 }
 #chat-display{
   height: $chatDisplayHeight;
@@ -18,7 +24,6 @@ $chatDisplayHeight: 100vh - $sendMessageDisplayHeight;
   word-wrap: break-word;
   hyphens: auto;
 }
-
 .btn-color{
   background-color: #209CEE;
 }
