@@ -7,13 +7,6 @@ const initialState={
     tabStatus: true
 };
 
-let array=[]
-for(let i=0; i<80; i++){
-    array[i]=i
-};
-
-initialState.users = array;
-
 const usersReducer = (state = initialState, action)=>{
     switch(action.type){
         case GET_USERS:

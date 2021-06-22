@@ -39,11 +39,11 @@ const Chat = ({users, getUsers, messages, getMessage}) => {
         return ( 
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-4 bg-dark" id='side-bar'>
+                    <div className="col-12 col-sm-6 col-md-4 bg-dark" id='side-bar'>
                         <div className="row bg-danger overflow-auto soundcloud"><Soundcloud/></div>
-                        <div className="row bg-info overflow-auto users"><Users users={users.users}/></div>
+                        <div className="row overflow-auto users mt-1"><Users users={users.users}/></div>
                     </div>
-                    <div className="col-8">
+                    <div className="col-12 col-sm-6 col-md-8">
                         <div className="row bg-secondary" id='chat-display'><Messages messages={messages.messages}/></div>
                         <div className="row bg-secondary" id='send-message'><Input sendMessage={sendMessage}/></div>
                     </div>

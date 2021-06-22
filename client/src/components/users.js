@@ -1,7 +1,7 @@
 const Users = (props)=>{
     return ( 
         <div className="users">
-             <div className="card-header text-white">
+             <div className="card-header bg-info mt-1">
                  <h3>Active Users: {props.users.length}</h3>
              </div>
             <ul className="list-group list-group-flush" id="users">
@@ -11,7 +11,8 @@ const Users = (props)=>{
                     rounded-pill 
                     bg-info 
                     text-center
-                    mt-1" key={i}> {user.name}</li>
+                    mt-1
+                    overflow-auto" key={i}> {user.name}</li>
                 })}
             </ul>
         </div>

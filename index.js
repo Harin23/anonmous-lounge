@@ -19,6 +19,10 @@ app.use(express.urlencoded({extended: true}));
 
 var users={};
 
+for(let i=0; i<80; i++){
+  users[i] = {name: "abcdefghijklsdfsdfsdfsd"}
+}
+
 io.on("connection", (socket) => {
   
   socket.on("new-user", (data)=>{

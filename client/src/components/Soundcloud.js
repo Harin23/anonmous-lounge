@@ -8,7 +8,7 @@ const Soundcloud = () => {
           scrolling="no"
           frameBorder="no"
           allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1275976255&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1275976255&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
         ></iframe>
         <div style={{
         fontSize: "10px", 

@@ -8,7 +8,8 @@ $chatDisplayHeight: 100vh - $sendMessageDisplayHeight;
   height: $sidebarHeight;
 }
 .users{
-max-height: 65%;
+  max-height: 64%;
+  height: 100%;
 }
 .soundcloud{
   max-height: 35%;
