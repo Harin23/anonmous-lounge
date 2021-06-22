@@ -33,6 +33,10 @@ const Chat = ({users, getUsers, messages, getMessage}) => {
         sendMessageSocket(socket, e.target[0].value);
         e.target[0].value=null;
     };
+    const navHome = (e) => {
+        localStorage.clear();
+        setRedirect(true);
+    }
     if(redirect){
         return(<Redirect to='/' />)
     }else{
@@ -41,7 +45,7 @@ const Chat = ({users, getUsers, messages, getMessage}) => {
                 <div className="row">
                     <div className="col-12 col-sm-6 col-md-4 bg-dark" id='side-bar'>
                         <div className="row bg-danger overflow-auto soundcloud"><Soundcloud/></div>
-                        <div className="row overflow-auto users mt-1"><Users users={users.users}/></div>
+                        <div className="row overflow-auto users mt-1"><Users users={users.users} home={navHome}/></div>
                     </div>
                     <div className="col-12 col-sm-6 col-md-8">
                         <div className="row bg-secondary" id='chat-display'><Messages messages={messages.messages}/></div>

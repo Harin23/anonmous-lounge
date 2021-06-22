@@ -11,6 +11,10 @@ $chatDisplayHeight: 100vh - $sendMessageDisplayHeight;
   max-height: 64%;
   height: 100%;
 }
+.users-header{
+  display: flex;
+  justify-content: space-between;
+}
 .soundcloud{
   max-height: 35%;
 }
