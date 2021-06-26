@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: process.env.CLIENT,
   }
 });
 const PORT = process.env.PORT || 3000;
@@ -18,10 +18,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 var users={};
-
-// for(let i=0; i<80; i++){
-//   users[i] = {name: "abcdefghijklsdfsdfsdfsd"}
-// }
 
 io.on("connection", (socket) => {
   
