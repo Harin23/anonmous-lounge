@@ -2,16 +2,12 @@ import {
     GET_MESSAGE 
 } from '../types'; 
 
-const initialState={
-    messages: []
-};
+const initialState=[];
 
 const messagesReducer = (state = initialState, action)=>{
     switch(action.type){
         case GET_MESSAGE:
-            return {
-                messages: [...state.messages, action.payload]
-            };
+            return [...state, action.payload];
         default:
             return state;
     }

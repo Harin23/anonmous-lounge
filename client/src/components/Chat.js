@@ -45,10 +45,10 @@ const Chat = ({users, getUsers, messages, getMessage}) => {
                 <div className="row">
                     <div className="col-12 col-sm-6 col-md-4 bg-dark" id='side-bar'>
                         <div className="row bg-danger overflow-auto soundcloud"><Soundcloud/></div>
-                        <div className="row overflow-auto users mt-1"><Users users={users.users} home={navHome}/></div>
+                        <div className="row overflow-auto users mt-1"><Users users={users} home={navHome}/></div>
                     </div>
                     <div className="col-12 col-sm-6 col-md-8">
-                        <div className="row bg-secondary" id='chat-display'><Messages messages={messages.messages}/></div>
+                        <div className="row bg-secondary" id='chat-display'><Messages messages={messages}/></div>
                         <div className="row bg-secondary" id='send-message'><Input sendMessage={sendMessage}/></div>
                     </div>
                 </div>

@@ -2,17 +2,12 @@ import {
     GET_USERS
 } from '../types';
 
-const initialState={
-    users: [], 
-    tabStatus: true
-};
+const initialState=[];
 
 const usersReducer = (state = initialState, action)=>{
     switch(action.type){
         case GET_USERS:
-            return {
-                users: action.payload
-            }
+            return action.payload
         default:
             return state;
     }
