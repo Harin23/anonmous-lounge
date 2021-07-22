@@ -1,5 +1,6 @@
 # anonymous-lounge
-### Online chatting website.
+
+### In order for this project to run, node and npm have to be installed.
 
 1. Clone the repository using whatever method you prefer.
 2. Then open up two terminals, cd into the cloned respository's folder for both.
